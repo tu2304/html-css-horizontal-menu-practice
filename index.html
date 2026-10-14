@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo menu ngang dropdown</title>
+    <style>
+        /* Cố định phông chữ cho trang HTML */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 30px;
+            background-color: #f4f4f4;
+        }
+
+        /* Đặt phân vùng cho trình đơn: chiều cao, đường viền, khoảng cách và màu nền */
+        #menu {
+            height: 40px;
+            background-color: #333;
+            border-radius: 4px;
+        }
+
+        /* Định nghĩa riêng cho các phần tử trong danh sách */
+        #menu ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        #menu ul li {
+            float: left;
+            position: relative;
+        }
+
+        /* Quy định độ rộng, chiều cao, cách hiển thị và định dạng văn bản của các liên kết */
+        #menu ul li a {
+            display: block;
+            width: 120px;
+            height: 40px;
+            line-height: 40px;
+            color: white;
+            text-align: center;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        /* Chuyển màu nền của liên kết sang màu đỏ khi con trỏ đưa qua */
+        #menu ul li a:hover {
+            background-color: red;
+        }
+
+        /* Quy định về vị trí hiển thị của danh sách con (trình đơn con) so với mục chọn cha */
+        #menu ul ul {
+            position: absolute;
+            top: 40px;
+            left: 0;
+            visibility: hidden; /* Ẩn các trình đơn con mặc định */
+            background-color: #333;
+        }
+
+        /* Quy định kích thước cho các mục trong menu con */
+        #menu ul ul li {
+            float: none;
+        }
+
+        /* Hiển thị trình đơn con khi con trỏ được đưa qua mục chọn của trình đơn cha */
+        #menu ul li:hover > ul {
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="menu">
+        <ul>
+            <li><a href="#">Trang chủ</a></li>
+            <li><a href="#">Sản phẩm</a>
+                <ul>
+                    <li><a href="#">Laptop</a></li>
+                    <li><a href="#">Điện thoại</a></li>
+                    <li><a href="#">Máy tính bảng</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Dịch vụ</a>
+                <ul>
+                    <li><a href="#">Tư vấn</a></li>
+                    <li><a href="#">Bảo trì</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Liên hệ</a></li>
+        </ul>
+    </div>
+
+</body>
+</html>
